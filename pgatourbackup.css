@@ -1,0 +1,78 @@
+/* Custom background color for the body */
+body {
+    background-color: #f4f4f9;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the header */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style for the ordered and unordered lists */
+ol {
+    margin: 20px;
+    padding: 0;
+    list-style-type: decimal;
+}
+
+ul {
+    margin: 10px 0 10px 20px;
+    list-style-type: disc;
+}
+
+/* Style for the Home Page link */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+    display: inline-block;
+}
+
+a:hover {
+    color: #2c3e50;
+}
+
+/* Style for the embedded YouTube video */
+iframe {
+    display: block;
+    margin: 20px auto;
+    border: 5px solid #3498db;
+    border-radius: 10px;
+}
+
+/* Div styles for positioning and styling blocks of content */
+.div-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.div-block {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Style for images */
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BYU vs Utah Guessing Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #00274D;
+    }
+
+    .scoreboard, .result, .game {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px 0;
+      width: 300px;
+      text-align: center;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .byu {
+      background-color: #00274D;
+      color: white;
+    }
+
+    .utah {
+      background-color: #CC0000;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .result {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>BYU vs Utah Guessing Game</h1>
+  
+  <!-- Home Page link -->
+  <a href="index.html" style="margin-bottom: 20px; font-size: 16px; color: #00274D; text-decoration: none; font-weight: bold;">Home Page</a>
+  <a href="pgatourbackup.html" style="margin-bottom: 20px; font-size: 16px; color: #00274D; text-decoration: none; font-weight: bold;">PGA Tour</a>
+
+  <div class="game">
+    <p>Who do you think will win?</p>
+    <button class="byu" onclick="makeGuess('BYU')">BYU</button>
+    <button class="utah" onclick="makeGuess('Utah')">Utah</button>
+  </div>
+
+  <div class="result" id="resultBox"></div>
+
+  <div class="scoreboard">
+    <p>Correct Guesses: <span id="correct">0</span></p>
+    <p>Incorrect Guesses: <span id="incorrect">0</span></p>
+  </div>
+
+  <script>
+    let correct = 0;
+    let incorrect = 0;
+
+    function makeGuess(guess) {
+      const winner = Math.random() < 0.9 ? 'BYU' : 'Utah';
+      const byuScore = winner === 'BYU' 
+        ? Math.floor(Math.random() * 21) + 30 
+        : Math.floor(Math.random() * 14) + 10;
+      const utahScore = winner === 'Utah' 
+        ? Math.floor(Math.random() * 21) + 30 
+        : Math.floor(Math.random() * 14) + 10;
+
+      const resultText = `Final Score: BYU ${byuScore} - Utah ${utahScore}<br>Winner: ${winner}`;
+
+      document.getElementById('resultBox').innerHTML = resultText;
+
+      if (guess === winner) {
+        correct++;
+        document.getElementById('correct').textContent = correct;
+      } else {
+        incorrect++;
+        document.getElementById('incorrect').textContent = incorrect;
+      }
+    }
+  </script>
+</body>
+</html>
